@@ -13,13 +13,13 @@ const jogo = {
     ]
   },
 
-  s2: {
-    texto: "Você decide começar o dia. O que vai fazer primeiro?",
-    opcoes: [
-      { texto: "Tomar café da manhã", proximo: "s4" },
-      { texto: "Tomar banho", proximo: "s5" }
-    ]
-  },
+s2: {
+  texto: "Você decide começar o dia. O que vai fazer primeiro?",
+  opcoes: [
+    { texto: "Tomar café da manhã", proximo: "s4" },
+    { texto: "Tomar banho", proximo: "s5" }
+  ]
+},
   
   s3: {
     texto: "Você acorda de novo e são 07:37. A alma sai do corpo por 3 segundos. Se atrasou para a Ford! Você vê 11 chamadas perdidas e 23 mensagens no grupo do zap",
