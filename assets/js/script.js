@@ -106,7 +106,7 @@ const jogo = {
   s13: {
     texto: "Você chega em casa. A missão foi cumprida. Ótimo trabalho!",
     opcoes: [
-      { texto: "FIM", proximo: "inicio" } // volta para a tela inicial
+      { texto: "FIM", proximo: "inicio" }
     ]
   }
 };
