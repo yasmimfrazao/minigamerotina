@@ -5,18 +5,11 @@ const texto = document.getElementById('texto');
 const opcoes = document.getElementById('opcoes');
 
 const jogo = {
-  inicio: {
+  s1: {
     texto: "O alarme toca às 06:30. O dia começou...ou quase.",
     opcoes: [
       { texto: "Pular da cama imediatamente", proximo: "s2" },
       { texto: "Dormir mais 5 minutinhos", proximo: "s3" }
-    ]
-  },
-  s2: {
-    texto: "Você decide começar o dia. O que vai fazer primeiro?",
-    opcoes: [
-      { texto: "Tomar café da manhã", proximo: "s4" },
-      { texto: "Tomar banho", proximo: "s5" }
     ]
   },
   s3: {
@@ -62,7 +55,7 @@ const jogo = {
     texto: `<div class="gameover-title">GAME OVER</div>
            Você tentou pular a catraca, mas houve um movimento estranho nas câmeras. RH te chama para bater um papo. Você foi demitido.`,
     opcoes: [
-      { texto: "Recomeçar", proximo: "inicio" }
+      { texto: "Recomeçar", proximo: "s1" }
     ]
   },
   s8b: {
@@ -85,12 +78,12 @@ const jogo = {
     ]
   },
   s9b: {
-  texto: "Você tenta continuar, mas o notebook só faz você perder tempo. Parece que ele não quer colaborar hoje, e você fica ali, esperando alguma mágica acontecer.",
-  opcoes: [
-    { texto: "Voltar e levar no TechLounge", proximo: "s9a" },
-    { texto: "Desistir e esperar o dia acabar", proximo: "s11" }
-  ]
-},
+    texto: "Você tenta continuar, mas o notebook só faz você perder tempo. Parece que ele não quer colaborar hoje, e você fica ali, esperando alguma mágica acontecer.",
+    opcoes: [
+      { texto: "Voltar e levar no TechLounge", proximo: "s9a" },
+      { texto: "Desistir e esperar o dia acabar", proximo: "s11" }
+    ]
+  },
   s10: {
     texto: "Você consegue entregar a atividade e ganha um parabéns do seu buddy",
     opcoes: [
@@ -132,7 +125,11 @@ function mostrarCena(cenaId) {
 }
 
 btnComecar.onclick = () => {
-  mostrarCena("inicio");
+  mostrarCena("s1");
 };
 
-mostrarCena("inicio");
+console.log("Botão começar:", btnComecar);
+btnComecar.onclick = () => {
+  console.log("Clicou em começar!");
+  mostrarCena("s1"); 
+};
