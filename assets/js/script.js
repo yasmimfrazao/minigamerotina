@@ -108,13 +108,13 @@ const jogo = {
   s13: {
     texto: "Você chega em casa. A missão foi cumprida. Ótimo trabalho!",
     opcoes: [
-      { texto: "FIM", proximo: "s1" }
+      { texto: "FIM", proximo: "inicio" } // volta pra tela inicial chamada "inicio"
     ]
   }
 };
 
 function mostrarCena(cenaId) {
-  if (cenaId === "telaInicial") {
+  if (cenaId === "inicio") {
     telaInicial.style.display = "flex";
     jogoDiv.style.display = "none";
     texto.innerHTML = "";
@@ -141,4 +141,4 @@ btnComecar.onclick = () => {
   mostrarCena("s1");
 };
 
-mostrarCena("telaInicial");
+mostrarCena("inicio");
