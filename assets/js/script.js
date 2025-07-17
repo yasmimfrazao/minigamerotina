@@ -132,7 +132,7 @@ function mostrarCena(cenaId) {
 }
 
 btnComecar.onclick = () => {
-  mostrarCena("s2");
+  mostrarCena("inicio");
 };
 
 mostrarCena("inicio");
