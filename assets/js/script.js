@@ -12,6 +12,13 @@ const jogo = {
       { texto: "Dormir mais 5 minutinhos", proximo: "s3" }
     ]
   },
+  s2: {
+    texto: "Você decide começar o dia. O que vai fazer primeiro?",
+    opcoes: [
+      { texto: "Tomar café da manhã", proximo: "s4" },
+      { texto: "Tomar banho", proximo: "s5" }
+    ]
+  },
   s3: {
     texto: "Você acorda de novo e são 07:37. A alma sai do corpo por 3 segundos. Se atrasou para a Ford! Você vê 11 chamadas perdidas e 23 mensagens no grupo do zap",
     opcoes: [
@@ -99,37 +106,37 @@ const jogo = {
   s13: {
     texto: "Você chega em casa. A missão foi cumprida. Ótimo trabalho!",
     opcoes: [
-      { texto: "FIM", proximo: "inicio" }
+      { texto: "FIM", proximo: "s1" }
     ]
   }
 };
 
 function mostrarCena(cenaId) {
-  if (cenaId === "inicio") {
+  if (cenaId === "telaInicial") {
     telaInicial.style.display = "flex";
     jogoDiv.style.display = "none";
+    texto.innerHTML = "";
+    opcoes.innerHTML = "";
   } else {
     telaInicial.style.display = "none";
     jogoDiv.style.display = "block";
-  }
 
-  const cena = jogo[cenaId];
-  texto.innerHTML = cena.texto;
-  opcoes.innerHTML = "";
-  cena.opcoes.forEach(opcao => {
-    const botao = document.createElement("button");
-    botao.textContent = opcao.texto;
-    botao.onclick = () => mostrarCena(opcao.proximo);
-    opcoes.appendChild(botao);
-  });
+    const cena = jogo[cenaId];
+    texto.innerHTML = cena.texto;
+    opcoes.innerHTML = "";
+
+    cena.opcoes.forEach(opcao => {
+      const botao = document.createElement("button");
+      botao.textContent = opcao.texto;
+      botao.onclick = () => mostrarCena(opcao.proximo);
+      opcoes.appendChild(botao);
+    });
+  }
 }
 
 btnComecar.onclick = () => {
+  console.log("Clicou em começar!");
   mostrarCena("s1");
 };
 
-console.log("Botão começar:", btnComecar);
-btnComecar.onclick = () => {
-  console.log("Clicou em começar!");
-  mostrarCena("s1"); 
-};
+mostrarCena("telaInicial");
